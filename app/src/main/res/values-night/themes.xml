@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.TrashPinger" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="background">@color/Gray</item>
+        <item name="background">@color/NightGray</item>
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="cornerSize">10dp</item>
         <item name="colorPrimaryVariant">@color/primaryLightColor</item>

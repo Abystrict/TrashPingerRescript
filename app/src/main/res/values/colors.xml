@@ -7,6 +7,7 @@
     <color name="secondaryLightColor">#bfff57</color>
     <color name="secondaryDarkColor">#4bcb00</color>
     <color name="primaryTextColor">#000000</color>
+    <color name="NightGray">#353535</color>
     <color name="secondaryTextColor">#000000</color>
     <color name="White">#FFFFFF</color>
     <color name="Ivory">#FFFFF0</color>

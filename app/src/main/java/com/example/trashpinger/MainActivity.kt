@@ -7,6 +7,7 @@ import android.os.SystemClock
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Button
+import android.widget.EditText
 import androidx.lifecycle.ViewModelProvider
 
 class MainActivity : AppCompatActivity() {
@@ -14,13 +15,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+
         loginbuttonconfigure()
         }
     private fun loginbuttonconfigure() {
+        val emailtextin:EditText = findViewById(R.id.editTextTextEmailAddress)
+        val passTextin:EditText = findViewById(R.id.PasswordTextBox)
         val buttonlogin:Button = findViewById(R.id.loginbutton)
-        buttonlogin.setOnClickListener{
-            val WelcomeScreenSwitcher = Intent(this, MainActivity2::class.java)
-            startActivity(WelcomeScreenSwitcher)
+        buttonlogin.setOnClickListener {
+            if (emailtextin.text.isNotBlank() && passTextin.text.isNotBlank())
+            {
+                val WelcomeScreenSwitcher = Intent(this, MainActivity2::class.java)
+                startActivity(WelcomeScreenSwitcher)
+            }
         }
     }
 }
