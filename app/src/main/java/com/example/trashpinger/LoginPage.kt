@@ -3,14 +3,10 @@ package com.example.trashpinger
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.SystemClock
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.EditText
-import androidx.lifecycle.ViewModelProvider
 
-class MainActivity : AppCompatActivity() {
+class LoginPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -26,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         buttonlogin.setOnClickListener {
             if (emailtextin.text.isNotBlank() && passTextin.text.isNotBlank())
             {
-                val WelcomeScreenSwitcher = Intent(this, MainActivity2::class.java)
+                val WelcomeScreenSwitcher = Intent(this, HomePage::class.java)
                 startActivity(WelcomeScreenSwitcher)
             }
         }

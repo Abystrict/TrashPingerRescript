@@ -27,7 +27,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
     private lateinit var lastLocation: Location
     private lateinit var FusedLocationClient: FusedLocationProviderClient
 
-    companion object{
+    companion object {
         private const val LOCATION_REQUEST_CODE = 101
     }
 
@@ -45,7 +45,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         FusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         toHome()
-        }
+        pingLocation()
+    }
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
@@ -61,13 +62,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
                 Manifest.permission.ACCESS_FINE_LOCATION
             ) != PackageManager.PERMISSION_GRANTED
         ) {
-            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_REQUEST_CODE)
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
+                LOCATION_REQUEST_CODE
+            )
             return
         }
         mMap.isMyLocationEnabled = true
-        FusedLocationClient.lastLocation.addOnSuccessListener(this) {
-        location -> if(location != null)
-            lastLocation = location
+        FusedLocationClient.lastLocation.addOnSuccessListener(this) { location ->
+            if (location != null)
+                lastLocation = location
             val currentLatLan = LatLng(location.latitude, location.longitude)
             placeMarkerOnMap(currentLatLan)
             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLan, 10f))
@@ -83,10 +88,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
     private fun toHome() {
         val tohome: Button = findViewById(R.id.mapsgoback)
         tohome.setOnClickListener() {
-            val tohomeint = Intent(this, MainActivity2::class.java)
+            val tohomeint = Intent(this, HomePage::class.java)
             startActivity(tohomeint)
         }
     }
-
+    private fun pingLocation(){
+        val pinglocation: Button = findViewById(R.id.pinglocationbutton)
+        pinglocation.setOnClickListener(){
+            val toPingScreenInt = Intent(this, LocationPing::class.java)
+            startActivity(toPingScreenInt)
+        }
+    }
     override fun onMarkerClick(p0: Marker) = false
 }
