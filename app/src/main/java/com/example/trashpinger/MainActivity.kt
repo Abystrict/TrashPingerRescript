@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         loginbuttonconfigure()
         }
-    private fun loginbuttonconfigure() {
+    private fun loginbuttonconfigure() { //login page
         val emailtextin:EditText = findViewById(R.id.editTextTextEmailAddress)
         val passTextin:EditText = findViewById(R.id.PasswordTextBox)
         val buttonlogin:Button = findViewById(R.id.loginbutton)
