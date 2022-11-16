@@ -11,6 +11,7 @@ class HomePage : AppCompatActivity() {
         setContentView(R.layout.activity_main2)
         backtologin()
         tomap()
+        ToRewards()
     }
     // functions
     private fun backtologin() {
@@ -25,6 +26,13 @@ class HomePage : AppCompatActivity() {
         toMapButton.setOnClickListener(){
             val toMapIntent = Intent(this, MapsActivity::class.java)
             startActivity(toMapIntent)
+        }
+    }
+    private fun ToRewards() {
+        val RewardsButton: Button = findViewById(R.id.rewardsbutton)
+        RewardsButton.setOnClickListener() {
+            val toRewardsIntent = Intent(this, rewards::class.java)
+            startActivity(toRewardsIntent)
         }
     }
 }

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="GradientInner">#3AA6CE</color>
+    <color name="GradientOuter">#6BFF94</color>
     <color name="primaryColor">#62ffbe</color>
     <color name="primaryLightColor">#9bfff1</color>
     <color name="primaryDarkColor">#11cb8e</color>

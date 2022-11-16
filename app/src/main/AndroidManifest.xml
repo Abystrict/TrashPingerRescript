@@ -16,6 +16,20 @@
         android:theme="@style/Theme.TrashPinger"
         tools:targetApi="31">
         <activity
+            android:name=".rewards"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".LocationPing"
             android:exported="false">
             <meta-data
